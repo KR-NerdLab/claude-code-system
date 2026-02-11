@@ -74,6 +74,7 @@ allowed-tools: Bash(git diff --cached*), Bash(git status*)
 
 코드블록 하나에 커밋 메시지만 담아서 한 번에 복사 가능하게 출력한다.
 코드블록 바깥에는 아무것도 쓰지 않는다.
+`Co-Authored-By` 트레일러는 절대 포함하지 않는다.
 
 ### body가 없는 경우
 
