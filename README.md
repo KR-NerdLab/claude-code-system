@@ -27,12 +27,17 @@ claude-code-system/
 
 | 스킬 | 설명 | 사용법 |
 |------|------|--------|
-| [commit-message](skills/commit-message/) | Conventional Commits 형식 커밋 메시지 생성 | `/commit-message [힌트]` |
-| [image-prompt](skills/image-prompt/) | 이미지 생성 프롬프트 작성 | `/image-prompt [설명]` |
+| [commit-message](skills/commands/commit-message/) | Conventional Commits 형식 커밋 메시지 생성 | `/commit-message [힌트]` |
+| [image-prompt](skills/commands/image-prompt/) | 이미지 생성 프롬프트 작성 | `/image-prompt [설명]` |
+| [plan-exec](skills/commands/plan-exec/) | gstack + superpowers 하이브리드 전략에서 구현 단계 진입점 | `/plan-exec [문서경로]` |
 
 ### Guides
 
-기술 스택별 아키텍처 가이드와 CLAUDE.md 구성 예시. *(준비 중)*
+개발 전략 가이드와 CLAUDE.md 구성 예시.
+
+| 가이드 | 설명 |
+|--------|------|
+| [gstack + superpowers 하이브리드 개발 가이드](guides/gstack-superpowers-hybrid.md) | gstack(기획/설계) + superpowers(구현) 병행 전략, 설정, 워크플로우, CLAUDE.md 템플릿 |
 
 ### Agents
 
