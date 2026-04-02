@@ -588,6 +588,7 @@ gstack과 superpowers에는 5개의 기능 중복 영역이 있다.
 
 **gstack (명시적 호출만)**
 - 기획: /office-hours, /autoplan, /plan-ceo-review, /plan-design-review, /plan-eng-review
+  - ⚠️ 기획 스킬 실행 중에는 코드 작성 절대 금지. 문서 산출물만 생성할 것.
 - 검증: /review, /qa, /cso
 - 배포: /ship, /land-and-deploy
 - gstack proactive는 false로 설정되어 있음. 자동 추천하지 말 것.
@@ -601,9 +602,10 @@ gstack과 superpowers에는 5개의 기능 중복 영역이 있다.
 ### 충돌 방지 규칙
 
 1. gstack 슬래시 명령어 실행 중에 superpowers 스킬을 자동 호출하지 말 것
-2. 디버깅은 superpowers systematic-debugging만 사용. /investigate 사용하지 말 것
-3. /ship 실행 시 finishing-a-development-branch 자동 호출하지 말 것
-4. gstack 기획 단계에서 superpowers brainstorming 자동 호출하지 말 것
+2. gstack 기획 스킬 실행 중에는 코드 작성 절대 금지 (문서 산출물만 생성)
+3. 디버깅은 superpowers systematic-debugging만 사용. /investigate 사용하지 말 것
+4. /ship 실행 시 finishing-a-development-branch 자동 호출하지 말 것
+5. gstack 기획 단계에서 superpowers brainstorming 자동 호출하지 말 것
 
 ### 문서 저장 규칙
 
