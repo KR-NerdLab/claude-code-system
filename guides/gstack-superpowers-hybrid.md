@@ -606,6 +606,7 @@ gstack과 superpowers에는 5개의 기능 중복 영역이 있다.
 3. 디버깅은 superpowers systematic-debugging만 사용. /investigate 사용하지 말 것
 4. /ship 실행 시 finishing-a-development-branch 자동 호출하지 말 것
 5. gstack 기획 단계에서 superpowers brainstorming 자동 호출하지 말 것
+6. 기획 스킬(plan-eng-review 등) 완료 후 코드 구현을 제안하거나 시작하지 말 것. 실제 코딩은 반드시 /plan-exec를 통해서만 진행. 기획 스킬은 문서 산출물만 생성하고 종료.
 
 ### 문서 저장 규칙
 
@@ -620,6 +621,38 @@ gstack과 superpowers에는 5개의 기능 중복 영역이 있다.
 - 세션 간 연결은 docs/ 내 문서로 수행
 - 새 세션 시작 시 이전 단계 문서를 먼저 읽을 것
 - 상황별 워크플로우: @docs/gstack-superpowers-hybrid.md 참조
+
+### 스킬 라우팅
+
+사용자가 명시적으로 요청했을 때, 해당 스킬을 Skill 도구로 먼저 호출할 것.
+자동으로 스킬을 추천하거나 호출하지 말 것 (proactive=false).
+직접 답변하거나 다른 도구를 먼저 사용하지 말 것. 스킬의 전문 워크플로우가 즉흥 답변보다 더 나은 결과를 낸다.
+
+기획 스킬:
+- 제품 아이디어, "이거 만들 가치 있나", 브레인스토밍 → office-hours 호출
+- 자동 리뷰 파이프라인 → autoplan 호출
+- CEO/전략 관점 리뷰 → plan-ceo-review 호출
+- 디자인 관점 리뷰 → plan-design-review 호출
+- 아키텍처 리뷰 → plan-eng-review 호출
+
+구현 스킬:
+- 기획 문서 기반 구현 시작 → plan-exec 호출
+- 버그, 에러, "왜 안 되지", 500 에러 → superpowers systematic-debugging 사용 (investigate 사용 금지)
+
+검증/배포 스킬:
+- 코드 리뷰, diff 확인 → review 호출
+- QA, 사이트 테스트, 버그 찾기 → qa 호출
+- 보안 점검 → cso 호출
+- 배포, 푸시, PR 생성 → ship 호출
+- 머지, 배포 확인 → land-and-deploy 호출
+
+기타:
+- 배포 후 문서 업데이트 → document-release 호출
+- 주간 회고 → retro 호출
+- 디자인 시스템, 브랜드 → design-consultation 호출
+- 비주얼 검수, 디자인 다듬기 → design-review 호출
+- 진행 상황 저장, 체크포인트, 이어하기 → checkpoint 호출
+- 코드 품질, 헬스 체크 → health 호출
 ```
 
 ---
