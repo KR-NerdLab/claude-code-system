@@ -44,6 +44,16 @@ gstack은 기획/설계/리뷰/배포를 슬래시 명령어(`/autoplan`, `/revi
 
 ## 절차
 
+### 0단계: 작업 브랜치 생성
+
+구현을 시작하기 전에 반드시 main 브랜치에서 새 브랜치를 만든다.
+
+1. `git checkout main && git pull` 으로 최신 상태 확인
+2. 계획 문서 제목이나 핵심 키워드를 기반으로 브랜치명 생성 (예: `feat/타이머-설정-기능`)
+3. `git checkout -b <브랜치명>` 으로 새 브랜치 생성
+
+**main 브랜치에서 직접 구현하지 않는다.** 머지는 `/ship`이 담당한다.
+
 ### 1단계: gstack 계획 문서 탐색
 
 사용자가 `$ARGUMENTS`로 문서 경로를 지정하면 해당 파일을 사용한다.
@@ -93,7 +103,10 @@ writing-plans가 완료되면 바로 `superpowers:subagent-driven-development` �
 
 ## 규칙
 
+- **main 브랜치에서 직접 구현하지 않는다** — 반드시 0단계에서 새 브랜치를 만든 후 작업한다
+- **커밋 메시지는 한국어로 작성한다** (예: `feat: 타이머 설정 기능 추가`, `test: useTimer 훅 단위 테스트`)
 - `superpowers:brainstorming`은 절대 호출하지 않는다
 - `superpowers:finishing-a-development-branch`는 호출하지 않는다 (배포는 gstack `/ship`이 담당)
+- `superpowers:using-git-worktrees`는 호출하지 않는다 (브랜치는 0단계에서 직접 생성)
 - gstack 슬래시 명령어(`/review`, `/qa`, `/ship` 등)는 이 스킬 내에서 실행하지 않는다
 - 이 스킬은 구현(코딩)에만 집중한다
